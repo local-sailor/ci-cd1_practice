@@ -10,7 +10,8 @@ jobs:
         - uses: actions/setup-python@v5 #also spaes after each colon :
           with: 
             python-version: "3.12"
-        - run: pip install pytest
+        - run: pip install pytest ruff
+        - run: ruff check .   # lint first: fast, catches typos and style issues before tests run
         - run: python src/helloworld.py
         - run: pytest -v   # -v makes the test log more descriptive usually it's . for a pass and F for fail
 
