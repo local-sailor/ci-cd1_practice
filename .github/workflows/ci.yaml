@@ -1,0 +1,17 @@
+
+
+name: CI
+on: [push, pull_request]
+jobs:
+    hello:
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v4  #note that spaces after dashes - matter
+        - uses: actions/setup-python@v5 #also spaes after each colon :
+          with: 
+            python-version: "3.12"
+        - run: pip install pytest
+        - run: python src/helloworld.py
+        - run: pytest
+
+
