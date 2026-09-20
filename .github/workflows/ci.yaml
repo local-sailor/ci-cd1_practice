@@ -12,6 +12,6 @@ jobs:
             python-version: "3.12"
         - run: pip install pytest
         - run: python src/helloworld.py
-        - run: pytest
+        - run: pytest -v   # -v makes the test log more descriptive usually it's . for a pass and F for fail
 
 
